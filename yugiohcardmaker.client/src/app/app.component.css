@@ -1,0 +1,233 @@
+section {
+  padding: 8px;
+}
+h1 {
+    text-align: center;
+    font-size: 25pt;
+}
+h2 {
+  text-align: center;
+  padding: 10px;
+}
+/* Sidebar styling ***********************************************************************************************/
+.sidebarRight {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  width: 400px;
+  height: 100vh;
+  background-color: #333;
+  color: white;
+}
+/* Display ******************************************************************************************************/
+.Display {
+  position: relative;
+  margin: auto;
+}
+
+.CardDisplay {
+  position: absolute;
+  top: 10px;
+  left: -400px;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+}
+  .CardDisplay img {
+    width: 850px;
+    position: absolute;
+    top: 10px;
+    left: -400px;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+  }
+/* Card Title ****************************************************************************************************/
+.TitleTextbox {
+  position: absolute;
+  top: 65px;
+  left: -370px;
+  width: 660px;
+  height: 68px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0 10px;
+}
+.CardTitle {
+  font-size: 70pt;
+  font-family: MatrixRegularSmallCaps;
+  white-space: nowrap;
+}
+.Common {
+  color: black;
+}
+.Rare {
+  color: white;
+}
+.SecretRare {
+  background-image: linear-gradient(#fff211 35%, #fffff8 40%, #fff211 48%, #bd920f 53%, #f7ce1e 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: grayscale(100%) drop-shadow(-1px 0 rgba(0, 0, 0, 0.4))
+  drop-shadow(1px 0 rgba(0, 0, 0, 0.4))
+  drop-shadow(0 -1px rgba(0, 0, 0, 0.4))
+  drop-shadow(0 1px rgba(0, 0, 0, 0.3))
+  drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+.UltraRare {
+  background-image: linear-gradient(#fff211 35%, #fffff8 40%, #fff211 48%, #bd920f 53%, #f7ce1e 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(-1px 0 rgba(0, 0, 0, 0.2))
+  drop-shadow(1px 0 rgba(0, 0, 0, 0.2))
+  drop-shadow(0 -1px rgba(0, 0, 0, 0.2))
+  drop-shadow(0 1px rgba(0, 0, 0, 0.2))
+  drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.4));
+}
+/* Link Arrow Grid ***********************************************************************************************/
+.link-arrow-grid {
+  transform: scale(1.5);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+
+/* Monster Type Styling ******************************************************************************************/
+.monsterType {
+  position: absolute;
+  top: 895px;
+  left: -360px;
+  font-size: 22pt;
+  font-family: 'yugiohmonstertype';
+  white-space: nowrap;
+  overflow: hidden;
+  transform-origin: left center;
+}
+@font-face {
+  font-family: 'yugiohmonstertype';
+  src: url("../../public/assets/fonts/Yu-Gi-Oh! ITC Stone Serif Small Caps Bold.ttf") format("truetype");
+}
+.monsterType .bracket {
+  margin: 2px; /* Space around the brackets */
+}
+.monsterType .content {
+  position: relative;
+  top: 2px; /* Adjust to move everything slightly down */
+}
+.monsterType .slash {
+  margin: 2px; /* Narrower space around slashes */
+}
+/* Lore and Effect Text ******************************************************************************************/
+.CardEffectTextbox {
+  position: absolute;
+  top: 945px;
+  left: -355px;
+  width: 586px; 
+}
+.SpellTrapTextbox {
+  position: absolute;
+  top: 800px;
+  left: -294px;
+  width: 586px;
+}
+.PendulumEffectTextbox {
+  position: absolute;
+  top: 760px;
+  left: -290px;
+  width: 580px;
+}
+.loreText {
+  text-align: justify;
+  line-height: 1;
+  white-space: pre-line;
+  font-size: 19pt;
+}
+.PendulumText, .spellText {
+  text-align: justify;
+  line-height: 1;
+  white-space: pre-line;
+  font-size: 19pt;
+  font-family: 'MatrixBook';
+}
+/* Attack and Defense Styling ************************************************************************************/
+.atkDef {
+  position: absolute;
+  font-size: 31pt;
+  font-family: MatrixBoldSmallCaps;
+  text-align: right;
+  width: 100px;
+  top: 1086px;
+}
+.LinkRating {
+  font-family: 'Ro GSan Serif Std B';
+  position: absolute;
+  top: 894px;
+  left: 272px;
+  transform: scaleX(1.2);
+  font-size: 18pt;
+}
+/* Pendulum Scale Styling ************************************************************************************/
+.PendulumScale {
+  position: absolute;
+  top: 790px;
+  font-family: 'MatrixBoldFractions';
+  font-size: 45pt;
+  text-align: center;
+  width: 80px;
+  letter-spacing: -6px;
+}
+/*****************************************************************************************************************/
+/* Image Container */
+.imageContainer, .pendulumContainer {
+  position: relative;
+  margin: auto;
+}
+.imageContainer {
+  top: 239px;
+  left: -200px;
+  width: 642px;
+  height: 641px;
+}
+.pendulumContainer {
+  top: 233px;
+  left: -200px;
+  width: 734px; /* Larger width */
+  height: 693px; /* Larger height */
+}
+  .imageContainer img, .pendulumContainer img {
+    width: 100%; /* Stretches the image horizontally */
+    height: 100%; /* Stretches the image vertically */
+    object-fit: fill; /* Ensures proper scaling without distortion */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+.save-button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+  .save-button:hover {
+    background-color: #0056b3;
+  }
+
+

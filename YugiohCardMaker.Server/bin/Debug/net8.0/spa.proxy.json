@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:4200",
+"RedirectUrl": "",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "C:\\Users\\Cyber\\OneDrive\\Desktop\\Yugioh-Card-Maker-3000\\YugiohCardMaker.Server\\..\\yugiohcardmaker.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}

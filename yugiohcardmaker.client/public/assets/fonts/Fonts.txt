@@ -1,0 +1,4 @@
+MatrixBoldSmallCaps = ATK/DEF Values
+MatricRegularSmallCaps = Card Title
+RoGSanSrfStd-UB = Link Rating
+MatrixBoldFractions = Pendulum Scales
