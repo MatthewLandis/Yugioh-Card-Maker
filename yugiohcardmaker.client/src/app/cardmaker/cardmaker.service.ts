@@ -2,12 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import { AppConfig } from '../app.config';
+
 @Injectable({
   providedIn: 'root'
 })
-export class CardService {
+export class CardMakerService {
 
-  endpoint = "http://localhost:8000"
+  endpoint = AppConfig.apiEndpoint;
 
   constructor(private http: HttpClient) { }
 
