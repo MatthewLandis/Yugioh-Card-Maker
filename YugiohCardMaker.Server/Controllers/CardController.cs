@@ -1,34 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
-using YugiohCardMaker.Server.Models;
+using YugiohCardMaker.Server.Services;
 
 namespace YugiohCardMaker.Server.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class CardController : ControllerBase
-    {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+    { 
+        private readonly ICardService _cardService;
 
-        private readonly ILogger<CardController> _logger;
-
-        public CardController(ILogger<CardController> logger)
+        public CardController(ICardService cardService)
         {
-            _logger = logger;
+            _cardService = cardService;
         }
 
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+        [HttpGet("DarkMagician")]
+        public async Task<IActionResult> GetDarkMagician()
+        { 
+            var darkMagician = await _cardService.GetDarkMagician();
+
+            return darkMagician != null ? Ok(darkMagician) : NotFound("Dark Magician is in your graveyard");
         }
     }
 }
