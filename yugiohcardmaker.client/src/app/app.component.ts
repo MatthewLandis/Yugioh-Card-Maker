@@ -86,13 +86,8 @@ export class AppComponent {
     this.updateLastMonsterType();
     this.RemovePendulum();
     this.UpdateHideforSpellTrap();
+    this.UpdateUnderline();
 
-  }
-
-  resetLevelStats() {
-    this.Stats.Level = 0;
-    this.Stats.NegativeLevel = 0;
-    this.Stats.Rank = 0;
   }
 
   applyTemplateSettings() {
@@ -114,13 +109,8 @@ export class AppComponent {
       Skill: { Attribute: 'No Attribute', LevelType: 'Level' },
       LegendaryDragon: { Attribute: 'No Attribute', LevelType: 'Level' },
     };
-    if (this.Template === 'Link') {
-      this.underLine = 'atkLink';
-      this.Stats.Defense = '';
-    } else {
-      this.underLine = 'atkDef';
-      this.Stats.Defense = '2100';
-    }
+
+
 
     const settings = templates[this.Template] || {};
 
@@ -152,23 +142,28 @@ export class AppComponent {
   /**************************************************************************************************************/
   RemovePendulumCheckbox = false;
   RemovePendulum() {
-    const show = ['Normal', 'Effect', 'Fusion', 'Synchro', 'Xyz']
-
-    this.RemovePendulumCheckbox = show.includes(this.Template) ? false : true;
+    const list = ['Normal', 'Effect', 'Fusion', 'Synchro', 'Xyz']
+    this.RemovePendulumCheckbox = list.includes(this.Template) ? false : true;
   }
-    HideForSpellTrap = false;
+  RemoveForSpellTrap = true;
   UpdateHideforSpellTrap() {
-    const show = ['Spell', 'Trap']
-    if (show.includes(this.Template))
-      this.HideForSpellTrap = true;
-    else {
-      this.HideForSpellTrap = false;
-    }
+    const list = ['Spell', 'Trap']
+    this.RemoveForSpellTrap = list.includes(this.Template) ? false : true;
+  }
+  UpdateUnderline() {
+    this.underLine = this.Template === 'Link' ? 'atkLink' : 'atkDef';
+    this.Stats.Defense = this.Template === 'Link' ? '' : '2100';
+  }
+
+  resetLevelStats() {
+    this.Stats.Level = 0;
+    this.Stats.NegativeLevel = 0;
+    this.Stats.Rank = 0;
   }
   /**************************************************************************************************************/
   updateLastMonsterType() {
-    const Remove = ['Ritual', 'Fusion', 'Synchro', 'DarkSynchro', 'Xyz', 'Link'];
-    if (Remove.includes(this.Template)) {
+    const list = ['Ritual', 'Fusion', 'Synchro', 'DarkSynchro', 'Xyz', 'Link'];
+    if (list.includes(this.Template)) {
       if (this.loreOrEffect == 'effect') {
         this.MonsterTypes.Last = 'Effect';
       } else {
@@ -279,7 +274,7 @@ export class AppComponent {
     // Measure the text width
     const actualWidth = context.measureText(this.text.lore).width;
 
-    const desiredWidth = 3300; // Target width of your container
+    const desiredWidth = 4300; // Target width of your container
 
     if (actualWidth > desiredWidth) {
       this.scaleEffect = desiredWidth / actualWidth; // Scale to fit
@@ -422,7 +417,7 @@ export class AppComponent {
 
 
       const actualWidth = context.measureText(fullText).width;
-      const desiredWidth = 593;
+      const desiredWidth = 700;
       const padding = 20;
 
       this.scaleMonsterType = actualWidth > desiredWidth - padding

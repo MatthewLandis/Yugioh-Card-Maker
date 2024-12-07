@@ -34,13 +34,11 @@ h2 {
   width: fit-content;
 }
   .CardDisplay img {
-    width: 850px;
     position: absolute;
-    top: 10px;
-    left: -400px;
+    left: -425px;
     right: 0;
     margin: auto;
-    width: fit-content;
+    width: 850px;
   }
 /* Card Title ****************************************************************************************************/
 .TitleTextbox {
@@ -56,9 +54,10 @@ h2 {
   padding: 0 10px;
 }
 .CardTitle {
-  font-size: 70pt;
+  font-size: 71pt;
   font-family: MatrixRegularSmallCaps;
   white-space: nowrap;
+  transform-origin: left center;
 }
 .Common {
   color: black;
@@ -99,9 +98,9 @@ h2 {
 /* Monster Type Styling ******************************************************************************************/
 .monsterType {
   position: absolute;
-  top: 895px;
+  top: 891px;
   left: -360px;
-  font-size: 22pt;
+  font-size: 24pt;
   font-family: 'yugiohmonstertype';
   white-space: nowrap;
   overflow: hidden;
@@ -112,39 +111,42 @@ h2 {
   src: url("../../public/assets/fonts/Yu-Gi-Oh! ITC Stone Serif Small Caps Bold.ttf") format("truetype");
 }
 .monsterType .bracket {
-  margin: 2px; /* Space around the brackets */
+  margin: 2px;
 }
 .monsterType .content {
   position: relative;
-  top: 2px; /* Adjust to move everything slightly down */
+  top: 2px;
 }
 .monsterType .slash {
-  margin: 2px; /* Narrower space around slashes */
+  margin: 2px;
 }
 /* Lore and Effect Text ******************************************************************************************/
 .CardEffectTextbox {
   position: absolute;
-  top: 945px;
+  top: 941px;
   left: -355px;
-  width: 586px; 
+  width: 710px;
+  transform-origin: left center;
 }
 .SpellTrapTextbox {
   position: absolute;
   top: 800px;
   left: -294px;
   width: 586px;
+  transform-origin: left center;
 }
 .PendulumEffectTextbox {
   position: absolute;
   top: 760px;
   left: -290px;
   width: 580px;
+  transform-origin: left center;
 }
 .loreText {
   text-align: justify;
   line-height: 1;
   white-space: pre-line;
-  font-size: 19pt;
+  font-size: 21pt;
 }
 .PendulumText, .spellText {
   text-align: justify;
@@ -156,7 +158,7 @@ h2 {
 /* Attack and Defense Styling ************************************************************************************/
 .atkDef {
   position: absolute;
-  font-size: 31pt;
+  font-size: 30pt;
   font-family: MatrixBoldSmallCaps;
   text-align: right;
   width: 100px;
@@ -165,10 +167,10 @@ h2 {
 .LinkRating {
   font-family: 'Ro GSan Serif Std B';
   position: absolute;
-  top: 894px;
-  left: 272px;
+  top: 1079px;
+  left: 328px;
   transform: scaleX(1.2);
-  font-size: 18pt;
+  font-size: 25pt;
 }
 /* Pendulum Scale Styling ************************************************************************************/
 .PendulumScale {
@@ -195,13 +197,13 @@ h2 {
 .pendulumContainer {
   top: 233px;
   left: -200px;
-  width: 734px; /* Larger width */
-  height: 693px; /* Larger height */
+  width: 734px;
+  height: 693px;
 }
   .imageContainer img, .pendulumContainer img {
-    width: 100%; /* Stretches the image horizontally */
-    height: 100%; /* Stretches the image vertically */
-    object-fit: fill; /* Ensures proper scaling without distortion */
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
   }
 
 
