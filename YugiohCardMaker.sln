@@ -3,9 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YugiohCardMaker.Server", "YugiohCardMaker.Server\YugiohCardMaker.Server.csproj", "{8284964C-90F2-4D82-8040-59153502F806}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YugiohCardMaker.Server", "YugiohCardMaker.Server\YugiohCardMaker.Server.csproj", "{8284964C-90F2-4D82-8040-59153502F806}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "yugiohcardmaker.client", "yugiohcardmaker.client\yugiohcardmaker.client.esproj", "{6FE4A7DE-61CB-429B-A7E5-E8836973E8B9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8284964C-90F2-4D82-8040-59153502F806} = {8284964C-90F2-4D82-8040-59153502F806}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

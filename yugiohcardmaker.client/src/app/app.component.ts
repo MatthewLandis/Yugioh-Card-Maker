@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CardService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -65,6 +66,11 @@ export class AppComponent {
   SpellTrapType = 'Normal';
   SpellTrapTypes = ['Normal', 'Continuous', 'Equip', 'Ritual', 'QuickPlay', 'Counter', 'Field'];
 
+  constructor(private service: CardService) {
+    this.service.getDarkMagician().subscribe((result) => {
+      console.log(result);
+    });
+  }
 
   /**************************************************************************************************************/
 

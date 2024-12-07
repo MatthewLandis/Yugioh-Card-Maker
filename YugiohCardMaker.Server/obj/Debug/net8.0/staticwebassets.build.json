@@ -1,23 +1,12 @@
 {
   "Version": 1,
-  "Hash": "EDRNMOODqgVxFnrcvGF9VPJzEgCSYR7v2Uj3x5lWN3Q=",
+  "Hash": "e/p3y9cTJbunsVW/l3NAVwfaDuvD+He885m1k5KlKc8=",
   "Source": "YugiohCardMaker.Server",
   "BasePath": "_content/YugiohCardMaker.Server",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [
-    {
-      "Identity": "C:\\Users\\Cyber\\OneDrive\\Desktop\\Yugioh-Card-Maker-3000\\yugiohcardmaker.client\\yugiohcardmaker.client.esproj",
-      "Version": 2,
-      "Source": "yugiohcardmaker.client",
-      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
-      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
-    }
-  ],
+  "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

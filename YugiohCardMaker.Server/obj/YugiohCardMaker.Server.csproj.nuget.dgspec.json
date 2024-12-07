@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cyber\\OneDrive\\Desktop\\Yugioh-Card-Maker-3000\\YugiohCardMaker.Server\\YugiohCardMaker.Server.csproj": {}
+    "D:\\Repositories\\Matthew\\Yugioh-Card-Maker-3000\\YugiohCardMaker.Server\\YugiohCardMaker.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cyber\\OneDrive\\Desktop\\Yugioh-Card-Maker-3000\\YugiohCardMaker.Server\\YugiohCardMaker.Server.csproj": {
+    "D:\\Repositories\\Matthew\\Yugioh-Card-Maker-3000\\YugiohCardMaker.Server\\YugiohCardMaker.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cyber\\OneDrive\\Desktop\\Yugioh-Card-Maker-3000\\YugiohCardMaker.Server\\YugiohCardMaker.Server.csproj",
+        "projectUniqueName": "D:\\Repositories\\Matthew\\Yugioh-Card-Maker-3000\\YugiohCardMaker.Server\\YugiohCardMaker.Server.csproj",
         "projectName": "YugiohCardMaker.Server",
-        "projectPath": "C:\\Users\\Cyber\\OneDrive\\Desktop\\Yugioh-Card-Maker-3000\\YugiohCardMaker.Server\\YugiohCardMaker.Server.csproj",
-        "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cyber\\OneDrive\\Desktop\\Yugioh-Card-Maker-3000\\YugiohCardMaker.Server\\obj\\",
+        "projectPath": "D:\\Repositories\\Matthew\\Yugioh-Card-Maker-3000\\YugiohCardMaker.Server\\YugiohCardMaker.Server.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositories\\Matthew\\Yugioh-Card-Maker-3000\\YugiohCardMaker.Server\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,15 +43,16 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.AspNetCore.SpaProxy": {
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
               "target": "Package",
-              "version": "[8.*-*, )"
+              "version": "[2.2.0, )"
             }
           },
           "imports": [
@@ -70,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

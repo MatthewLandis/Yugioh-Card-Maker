@@ -1,6 +1,0 @@
-@YugiohCardMaker.Server_HostAddress = http://localhost:5143
-
-GET {{YugiohCardMaker.Server_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

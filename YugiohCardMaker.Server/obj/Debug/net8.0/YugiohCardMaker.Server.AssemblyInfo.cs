@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YugiohCardMaker.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4552fe26b460775f083df3a6aedccdcee1f0431")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11f6189acfc40a6c77a93a30a0ff81ace4391714")]
 [assembly: System.Reflection.AssemblyProductAttribute("YugiohCardMaker.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YugiohCardMaker.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
