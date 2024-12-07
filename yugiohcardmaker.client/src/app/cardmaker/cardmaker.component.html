@@ -28,7 +28,7 @@
       <img src="assets/CardTemplates/PendulumTemplates/PendulumShade/Pendulum{{Template}}.png" />
       <img src="assets/CardTemplates/PendulumTemplates/PendulumTemplate.png" />
       <p class="PendulumScale" style="left:-380px;">{{Stats.PendulumScale}}</p>
-      <p class="PendulumScale" style="left: 290px;">{{Stats.PendulumScale}}</p>
+      <p class="PendulumScale" style="left: 260px;">{{Stats.PendulumScale}}</p>
     </div>
     <!-- Link Overlay -->
     <div *ngIf="Template === 'Link'">
@@ -90,8 +90,8 @@
       </div>
       <!--Underline States-->
       <img src="assets/underLine/{{ underLine }}.png" />
-      <p class="atkDef" style=" left: 88px;">{{ Stats.Attack }}</p>
-      <p class="atkDef" style=" left: 260px;">{{ Stats.Defense }}</p>
+      <p class="atkDef" style=" left: 58px;">{{ Stats.Attack }}</p>
+      <p class="atkDef" style=" left: 222px;">{{ Stats.Defense }}</p>
       <p class="LinkRating" *ngIf="Template === 'Link'">{{ Stats.LinkRating }}</p>
     </div>
     <!-- Spells and Traps -->
@@ -202,6 +202,7 @@
     </section>
     <!-- Link Arrow Control Grid -->
     <section *ngIf="Template === 'Link'">
+      <hr />
       <h2>Link Arrow Selection</h2>
       <div class="link-arrow-grid">
         <!-- Top Left -->
@@ -265,8 +266,9 @@
     <label>Upload Image: </label>
     <input type="file" (change)="onImageSelected($event)" />
   </section>
+  <hr />
+
   <section *ngIf="RemoveForSpellTrap">
-    <hr />
     <label>
       <input type="radio"
              [(ngModel)]="loreOrEffect"
@@ -283,7 +285,7 @@
   <section *ngIf="RemoveForSpellTrap">
     <label>Monster's {{ loreOrEffect }} Text: </label>
     <textarea [(ngModel)]="text.lore"
-              rows="9" cols="50"
+              rows="9" cols="55"
               [ngStyle]="loreOrEffect === 'lore' ? {'font-style': 'italic'} : {}"
               (input)="adjustEffectText()">
     </textarea>
@@ -299,17 +301,18 @@
   <section *ngIf="PendulumTemplate">
     <label>Pendulum Effect Text: </label>
     <textarea [(ngModel)]="text.pendulum"
-              rows="9" cols="50"
+              rows="9" cols="55"
               (input)="adjustPendulumEffectText()">
     </textarea>
   </section>
   <section *ngIf="!RemoveForSpellTrap">
     <textarea [(ngModel)]="text.lore"
-              rows="9" cols="50"
+              rows="9" cols="55"
               (input)="adjustSpellEffectText()">
     </textarea>
   </section>
   <!-- Save Card Button -->
+  <hr />
   <section>
     <section>
       <button class="save-button" (click)="saveCard()">Save Card</button>

@@ -2,21 +2,26 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { Routes } from '@angular/router';
-
-
-const routes: Routes = [
-];
+import { NavbarComponent } from './navbar/navbar.component';
+import { AboutComponent } from './about/about.component';
+import { CardMakerComponent } from './cardmaker/cardmaker.component';
+import { DecksComponent } from './decks/decks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
+    AboutComponent,
+    DecksComponent,
+    CardMakerComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, FormsModule
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

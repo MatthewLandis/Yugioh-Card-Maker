@@ -4,7 +4,7 @@ using YugiohCardMaker.Server.Services;
 namespace YugiohCardMaker.Server.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/Card")]
     public class CardController : ControllerBase
     { 
         private readonly ICardService _cardService;
@@ -20,6 +20,16 @@ namespace YugiohCardMaker.Server.Controllers
             var darkMagician = await _cardService.GetDarkMagician();
 
             return darkMagician != null ? Ok(darkMagician) : NotFound("Dark Magician is in your graveyard");
+        }
+
+
+
+        [HttpGet("Dark")]
+        public async Task<IActionResult> GetDark()
+        {
+            var dark = await _cardService.GetDark();
+
+            return dark != null ? Ok(dark) : NotFound("poopshoot");
         }
     }
 }

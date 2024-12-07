@@ -19,7 +19,7 @@ namespace YugiohCardMaker.Server.Services
                     return new CardModel
                     {
                         Title = "Dark Magician",
-                        Level = 1
+                        Level = 7
                     };
                 });
 
@@ -28,6 +28,30 @@ namespace YugiohCardMaker.Server.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "GetDarkMagician");
+            }
+
+            return null;
+        }
+
+
+
+        public async Task<CardModel2?> GetDark()
+        {
+            try
+            {
+                var dark = await Task.Run(() =>
+                {
+                    return new CardModel2
+                    {
+                        PendulumScale = 4
+                    };
+                });
+
+                return dark;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "GetDark");
             }
 
             return null;

@@ -1,0 +1,56 @@
+.textBox {
+  width: 800px;
+  border: 1px solid white;
+  background-color: #111;
+  color: white;
+  font-family: 'Aguero Serif Free';
+  text-align: center;
+  margin: 50px auto;
+  z-index: 1;
+}
+h1 {
+  font-size: 50pt;
+  font-weight: 100;
+}
+p {
+  font-family: 'Times New Roman';
+  font-size: 15pt;
+}
+.table {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 80px;
+}
+a {
+  padding: 30px;
+  color: white;
+  text-decoration: none;
+}
+.header {
+  font-size: 30px;
+  padding-bottom: 10px
+}
+/* Background container for the animated cards */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+/* Background */
+.background-card {
+  position: absolute;
+  bottom: -300px;
+  width: 200px;
+  animation: riseAndSpin 10s linear infinite;
+}
+/* Animation */
+@keyframes riseAndSpin {
+  100% {
+    transform: translateY(-120vh) rotateY(360deg);
+    opacity: 0;
+  }
+}

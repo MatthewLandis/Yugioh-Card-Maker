@@ -1,0 +1,50 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #111;
+  border: 1px solid #fff;
+  font-family: 'Aguero Serif Free';
+
+}
+
+p {
+  font-size: 35px;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+  nav li {
+    display: inline-block;
+    margin: 0 30px;
+  }
+  nav a {
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+  }
+    nav a:hover {
+      color: #808080;
+      text-decoration: underline;
+    }
+
+button {
+  font-family: 'Aguero Serif Free';
+  font-size: 30px;
+  font-weight: 600;
+  background-color: #fff;
+  color: black;
+  border: none;
+  padding: 5px 9px;
+  cursor: pointer;
+}
+  button:hover {
+    background-color: #808080;
+  }
