@@ -4,8 +4,7 @@ import { CardMakerComponent } from './cardmaker/cardmaker.component';
 import { DecksComponent } from './decks/decks.component';
 
 import { AboutComponent } from './about/about.component';
-import { CardMakerComponent } from './cardmaker/cardmaker.component';
-import { DecksComponent } from './decks/decks.component';
+
 
 const routes: Routes = [
   { path: '', component: AboutComponent },
