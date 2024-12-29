@@ -14,12 +14,12 @@ namespace YugiohCardMaker.Server.Controllers
             _cardService = cardService;
         }
 
-        [HttpGet("DarkMagician")]
-        public async Task<IActionResult> GetDarkMagician()
+        [HttpGet("AllCards")]
+        public async Task<IActionResult> GetCards()
         { 
-            var darkMagician = await _cardService.GetDarkMagician();
+            var cards = await _cardService.GetCards();
 
-            return darkMagician != null ? Ok(darkMagician) : NotFound("Dark Magician is in your graveyard");
+            return cards != null ? Ok(cards) : NotFound("All cards are in your graveyard");
         }
 
 

@@ -1,33 +1,38 @@
-﻿using YugiohCardMaker.Server.Models;
+﻿using YugiohCardMaker.Server.Databases;
+using YugiohCardMaker.Server.Models;
+using Dapper;
 
 namespace YugiohCardMaker.Server.Services
 {
     public class CardService : ICardService
     {
         private readonly ILogger<CardService> _logger;
-        public CardService(ILogger<CardService> logger) 
+        private readonly ISql _sql;
+        public CardService(
+            ILogger<CardService> logger,
+            ISql sql
+        ) 
         {
             _logger = logger;
+            _sql = sql;
         }
 
-        public async Task<CardModel?> GetDarkMagician()
+        public async Task<List<CardModel>?> GetCards()
         {
             try
             {
-                var darkMagician = await Task.Run(() =>
+                using (var con = _sql.Cards)
                 {
-                    return new CardModel
-                    {
-                        Title = "Dark Magician",
-                        Level = 7
-                    };
-                });
+                    var query = "SELECT * FROM Cards";
 
-                return darkMagician;
+                    var result = (await con.QueryAsync<CardModel>(query)).ToList();
+
+                    return result;
+                }
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "GetDarkMagician");
+                _logger.LogError(ex, "GetCards");
             }
 
             return null;

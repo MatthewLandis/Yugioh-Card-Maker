@@ -13,8 +13,8 @@ export class CardMakerService {
 
   constructor(private http: HttpClient) { }
 
-  public getDarkMagician(): Observable<{ title: string; level: number }> {
-    return this.http.get<{ title: string; level: number }>(`${this.endpoint}/api/Card/DarkMagician`);
+  public getCards(): Observable<{ title: string; level: number }[]> {
+    return this.http.get<{ title: string; level: number }[]>(`${this.endpoint}/api/Card/AllCards`);
   }
 
   public getDark(): Observable<{ PendulumScale: number }> {

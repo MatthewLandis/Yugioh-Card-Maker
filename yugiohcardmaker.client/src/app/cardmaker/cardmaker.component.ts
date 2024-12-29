@@ -67,9 +67,12 @@ export class CardMakerComponent {
   SpellTrapTypes = ['Normal', 'Continuous', 'Equip', 'Ritual', 'QuickPlay', 'Counter', 'Field'];
 
   constructor(private service: CardMakerService) {
-    this.service.getDarkMagician().subscribe((result) => {
-      console.log(result);
+    this.service.getCards().subscribe((result) => {
+      result.forEach((item) => {
+        console.log(item);
+      })
     });
+
     this.service.getDark().subscribe((result) => {
       console.log(result);
     });
