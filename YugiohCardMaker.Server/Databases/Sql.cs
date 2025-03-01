@@ -1,23 +1,12 @@
 ﻿using Microsoft.Extensions.Options;
 using Microsoft.Data.SqlClient;
-using Microsoft.AspNetCore.Hosting.Server;
-using System.Diagnostics.Metrics;
 
 namespace YugiohCardMaker.Server.Databases
 {
-    public class Sql : ISql
+    public class Sql(IOptions<Settings> settings) : ISql
     {
-        private readonly string _connectionString;
+        private readonly string _connectionString = settings!.Value.YCM;
 
-        public Sql(IOptions<Settings> settings)
-        {
-            _connectionString = settings!.Value.Users;
-        }
-        public SqlConnection Users => new(_connectionString);
+        public SqlConnection YCM => new(_connectionString);
     }
 }
-
-Server = localhost\SQLEXPRESS; Database = master; Trusted_Connection = True; 
-C:\Program Files\Microsoft SQL Server\160\Setup Bootstrap\Log\20250301_133821 
-C:\SQL2022\Express_ENU 
-C:\Program Files\Microsoft SQL Server\160\SSEI\Resources

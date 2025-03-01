@@ -1,7 +1,7 @@
 using YugiohCardMaker.Server.Services;
 using YugiohCardMaker.Server.Databases;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IUserService, UserService>();
@@ -9,17 +9,17 @@ builder.Services.AddScoped<ISql, Sql>();
 
 builder.Services.Configure<YugiohCardMaker.Server.Settings>(builder.Configuration);
 
-builder.Services.AddCors(options =>
+builder.Services.AddCors(static options =>
 {
-    options.AddPolicy("AllowAngularApp", policy =>
+    options.AddPolicy("AllowAngularApp", static policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
+        _ = policy.WithOrigins("http://localhost:4200")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
 });
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 app.UseCors("AllowAngularApp");
 

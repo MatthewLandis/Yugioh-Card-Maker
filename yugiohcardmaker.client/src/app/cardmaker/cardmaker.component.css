@@ -66,7 +66,7 @@ hr {
 }
 @font-face {
   font-family: 'matrixregularsmallcaps';
-  src: url('../../../public/assets/fonts/matrixregularsmallcaps.ttf') format('truetype');
+  src: url('../../../public/assets/fonts/MatrixRegularSmallCaps.ttf') format('truetype');
 }
 
 .Common {
@@ -194,7 +194,7 @@ hr {
 }
 @font-face {
   font-family: 'matrixboldsmallcaps';
-  src: url('../../../public/assets/fonts/matrixboldsmallcaps.otf') format('opentype');
+  src: url('../../../public/assets/fonts/MatrixBoldSmallCaps.otf') format('opentype');
 }
 .LinkRating {
   font-family: 'rogsansrfstd-ub';
@@ -206,7 +206,7 @@ hr {
 }
 @font-face {
   font-family: 'rogsansrfstd-ub';
-  src: url('../../../public/assets/fonts/rogsansrfstd-ub.otf') format('opentype');
+  src: url('../../../public/assets/fonts/RoGSanSrfStd-UB.otf') format('opentype');
 }
 /* Pendulum Scale Styling ************************************************************************************/
 .PendulumScale {
@@ -220,7 +220,7 @@ hr {
 }
 @font-face {
   font-family: 'matrixboldfractions';
-  src: url('../../../public/assets/fonts/matrixboldfractions.otf') format('opentype');
+  src: url('../../../public/assets/fonts/MatrixBoldFractions.otf') format('opentype');
 }
 /*****************************************************************************************************************/
 /* Image Container */

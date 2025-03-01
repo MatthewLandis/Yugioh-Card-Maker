@@ -4,7 +4,7 @@ namespace YugiohCardMaker.Server.Databases
 {
     public interface ISql
     {
-        SqlConnection Users { get; }
+        SqlConnection YCM { get; }
 
     }
 }

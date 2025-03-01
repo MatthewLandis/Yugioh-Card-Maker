@@ -4,6 +4,6 @@ namespace YugiohCardMaker.Server.Services
 {
     public interface IUserService
     {
-        Task<bool>RegisterUser(RegisterRequest request);
+        Task<bool> RegisterUser(User request);
     }
 }

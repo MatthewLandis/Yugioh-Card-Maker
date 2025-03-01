@@ -1,38 +1,32 @@
 ﻿using YugiohCardMaker.Server.Models;
 using YugiohCardMaker.Server.Databases;
 using Dapper;
+
 namespace YugiohCardMaker.Server.Services
 {
-    public class UserService : IUserService
+    public class UserService(ISql sql) : IUserService
     {
-        private readonly ISql _sql;
-        public UserService(
-            ISql sql
-        )
-        {
-            _sql = sql;
-        }
+        private readonly ISql _sql = sql;
 
-        public async Task<bool> RegisterUser(RegisterRequest request)
+        public async Task<bool> RegisterUser(User request)
         {
             try
             {
-                using (var con = _sql.Users)
+                using Microsoft.Data.SqlClient.SqlConnection con = _sql.YCM;
+                User? existingUser = await con.QuerySingleOrDefaultAsync<User>("Select * from Users where Email = @Email", new { request.Email });
+                if (existingUser != null)
                 {
-                    var existingUser = await con.QuerySingleAsync<RegisterRequest>("Select * from Users where Email = @Email", new { request.Email });
-                    if (existingUser != null)
-                    {
-                        return false;
-                    }
-
-                    var result = await con.ExecuteAsync("Insert into Users (Username, Email, Password) VALUES (@Username, @Email, @Password)", request);
+                    return false;
                 }
-                return true;
+
+                int result = await con.ExecuteAsync("Insert into Users (Username, Email, Password) VALUES (@Username, @Email, @Password)", request);
+                return result != 0;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
+
             return false;
         }
     }

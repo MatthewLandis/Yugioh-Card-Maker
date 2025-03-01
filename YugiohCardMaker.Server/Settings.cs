@@ -2,7 +2,7 @@
 {
     public class Settings
     {
-        public required string Users { get; set; } = "";
+        public required string YCM { get; set; } = "";
     }
 }
 //postmaster
