@@ -2,6 +2,7 @@
 {
     public class Settings
     {
-        public required string Cards { get; set; } = "";
+        public required string Users { get; set; } = "";
     }
 }
+//postmaster

@@ -18,25 +18,9 @@ export class AboutComponent implements OnInit {
     const maxCards = 15;
     const cardImagePath = '/assets/card.png';
 
-    const background = document.getElementById('background');
-    if (!background) return;
 
-    const currentCards = background.querySelectorAll('.background-card');
-    if (currentCards.length >= maxCards) {
-      return;
-    }
 
-    const card = this.renderer.createElement('img');
-    this.renderer.setAttribute(card, 'src', cardImagePath);
-    this.renderer.addClass(card, 'background-card');
 
-    const randomPosition = Math.random() * 90;
-    card.style.left = `${randomPosition}%`;
 
-    this.renderer.appendChild(background, card);
-
-    card.addEventListener('animationend', () => {
-      card.remove();
-    });
   }
 }

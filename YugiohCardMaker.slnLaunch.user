@@ -10,7 +10,7 @@
       {
         "Path": "yugiohcardmaker.client\\yugiohcardmaker.client.esproj",
         "Action": "Start",
-        "DebugTarget": "localhost (Chrome)"
+        "DebugTarget": "localhost (Edge)"
       }
     ]
   }

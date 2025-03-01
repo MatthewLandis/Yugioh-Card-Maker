@@ -2,10 +2,9 @@ using YugiohCardMaker.Server.Services;
 using YugiohCardMaker.Server.Databases;
 
 var builder = WebApplication.CreateBuilder(args);
-
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<ICardService, CardService>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ISql, Sql>();
 
 builder.Services.Configure<YugiohCardMaker.Server.Settings>(builder.Configuration);

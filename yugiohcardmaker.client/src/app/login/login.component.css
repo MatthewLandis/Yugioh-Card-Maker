@@ -1,0 +1,51 @@
+* {
+  font-weight: 100;
+  color: white;
+}
+
+section {
+  width: 900px;
+  margin: 50px auto;
+  border: 1px solid #fff;
+  background: #111;
+  font-family: 'Aguero Serif Free';
+  text-align: center;
+  font-size: 40pt;
+}
+
+h1 {
+  margin: 10px;
+}
+
+hr {
+  margin: 0px;
+}
+
+p {
+  font-size: 25pt;
+}
+
+input {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #fff;
+  background-color: #222;
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Times New Roman';
+}
+
+button {
+  width: 50%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: black;
+  font-size: 30pt;
+  font-weight: bold;
+  font-family: 'Aguero Serif Free';
+  cursor: pointer;
+}
+  button:hover {
+    background-color: #808080;
+  }

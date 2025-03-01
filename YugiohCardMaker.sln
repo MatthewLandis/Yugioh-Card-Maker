@@ -10,6 +10,11 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "yugiohcardmaker.client", "y
 		{8284964C-90F2-4D82-8040-59153502F806} = {8284964C-90F2-4D82-8040-59153502F806}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{61C76209-A590-4821-ABED-349A8CF967A3}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

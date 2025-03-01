@@ -1,17 +1,13 @@
-<body>
-  <div class="background">
-    <div class="card-container"></div>
-  </div>
-<header>
+  <header>
     <p>Yu-Gi-Oh Card Maker</p>
-  <nav>
+    <nav>
       <ul>
-      <li><a href="/About">About</a></li>
-      <li><a href="/Forum">Forum</a></li>
-      <li><a href="/CardMaker">CardMaker</a></li>
-      <li><a href="/Decks">Decks</a></li>
-    </ul>
-  </nav>
-  <button class="profile-button">Profile</button>
-</header>
-</body>
+        <li><a href="/About">About</a></li>
+        <li><a href="/CardMaker">Card Maker</a></li>
+      </ul>
+    </nav>
+    <div class="login-container">
+      <button *ngIf="!isLoggedIn" routerLink="/login">Login</button>
+      <button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+    </div>
+  </header>

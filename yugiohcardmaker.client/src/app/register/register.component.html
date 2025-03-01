@@ -1,0 +1,16 @@
+<section>
+  <h1>Register</h1>
+  <hr>
+  <form (ngSubmit)="onSubmit()">
+    <input id="username" type="text" [(ngModel)]="username" name="username" placeholder="Username" required />
+    <input id="email" type="email" [(ngModel)]="email" name="email" placeholder="Email" required />
+    <input id="password" type="password" [(ngModel)]="password" name="password" placeholder="Password" required />
+    <p>
+      Already have an account?<br>
+      <button (click)="navigateToLogin()" style="width: 20%;">Login Here</button>
+    </p>
+    <button type="submit">Register</button>
+  </form>
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+</section>

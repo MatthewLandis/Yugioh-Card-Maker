@@ -1,46 +1,39 @@
-section {
-  padding: 8px;
-}
-
-h1 {
-  text-align: center;
-  font-size: 35pt;
-  padding: 0;
-  margin: 0;
-  font-weight:100;
-  font-family: 'Aguero Serif Free';
-}
-
-h2 {
-  text-align: center;
-  margin: 0;
-  font-size: 27pt;
-  font-weight: 100;
-  font-family: 'Aguero Serif Free';
-}
-/* Sidebar styling ***********************************************************************************************/
+/* Aside */
 .sidebarRight {
   position: absolute;
-  top: 83px;
+  top: 85px;
   right: 8px;
-  width: 440px;
+  width: 435px;
   background-color: #111;
   border: 1px solid #fff;
   color: white;
 }
-/* Display ******************************************************************************************************/
+section {
+  padding: 8px;
+  font-size: 20px;
+}
+h1, h2{
+  text-align: center;
+  margin: 0;
+  font-weight:100;
+  font-family: 'Aguero Serif Free';
+}
+hr {
+    margin: 0;
+}
+
+/* Display */
 .Display {
-  position: relative;
-  margin: auto;
-  background-color: #111;
-  border: 1px solid #fff;
-  height: 1200px;
+  position: absolute;
+  left: 8px;
+  width: 813px;
+  height: 1185px;
 }
 
 .CardDisplay {
   position: absolute;
-  top: 7px;
-  left: -400px;
+  top: 0;
+  left: 37px;
   right: 0;
   margin: auto;
   width: fit-content;
@@ -54,7 +47,7 @@ h2 {
 /* Card Title ****************************************************************************************************/
 .TitleTextbox {
   position: absolute;
-  top: 65px;
+  top: 61px;
   left: -370px;
   width: 660px;
   height: 68px;
@@ -66,10 +59,14 @@ h2 {
 }
 
 .CardTitle {
-  font-size: 71pt;
-  font-family: MatrixRegularSmallCaps;
+  font-size: 70pt;
+  font-family: 'matrixregularsmallcaps';
   white-space: nowrap;
   transform-origin: left center;
+}
+@font-face {
+  font-family: 'matrixregularsmallcaps';
+  src: url('../../../public/assets/fonts/matrixregularsmallcaps.ttf') format('truetype');
 }
 
 .Common {
@@ -93,17 +90,27 @@ h2 {
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(-1px 0 rgba(0, 0, 0, 0.2)) drop-shadow(1px 0 rgba(0, 0, 0, 0.2)) drop-shadow(0 -1px rgba(0, 0, 0, 0.2)) drop-shadow(0 1px rgba(0, 0, 0, 0.2)) drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.4));
 }
+
+.Skill {
+  color: white;
+  font-size: 57px;
+  font-family: Arial;
+  font-weight: 700;
+  -webkit-text-stroke: 2px black;
+  -webkit-text-fill-color: white;
+  letter-spacing: -4px;
+}
 /* Link Arrow Grid ***********************************************************************************************/
 .link-arrow-grid {
   transform: scale(1.5);
   display: grid;
-  align-items:center;
-  justify-items:center;
+  align-items: center;
+  justify-items: center;
   grid-template-columns: repeat(3, 1fr);
   width: 100px;
   height: 100px;
   margin: auto;
-  padding:20px;
+  padding: 20px;
 }
 
 /* Monster Type Styling ******************************************************************************************/
@@ -162,6 +169,7 @@ h2 {
 
 .loreText {
   text-align: justify;
+  transform-origin: left;
   line-height: 1;
   white-space: pre-line;
   font-size: 21pt;
@@ -173,34 +181,46 @@ h2 {
   white-space: pre-line;
   font-size: 19pt;
   font-family: 'MatrixBook';
+  transform-origin: left center;
 }
 /* Attack and Defense Styling ************************************************************************************/
 .atkDef {
   position: absolute;
   font-size: 28pt;
-  font-family: MatrixBoldSmallCaps;
+  font-family: 'matrixboldsmallcaps';
   text-align: right;
-  width: 100px;
-  top: 1041px;
+  width: 100pt;
+  top: 783pt;
 }
-
+@font-face {
+  font-family: 'matrixboldsmallcaps';
+  src: url('../../../public/assets/fonts/matrixboldsmallcaps.otf') format('opentype');
+}
 .LinkRating {
-  font-family: 'Ro GSan Serif Std B';
+  font-family: 'rogsansrfstd-ub';
   position: absolute;
   top: 1041px;
   left: 297px;
   transform: scaleX(1.2);
   font-size: 20pt;
 }
+@font-face {
+  font-family: 'rogsansrfstd-ub';
+  src: url('../../../public/assets/fonts/rogsansrfstd-ub.otf') format('opentype');
+}
 /* Pendulum Scale Styling ************************************************************************************/
 .PendulumScale {
   position: absolute;
-  top: 750px;
-  font-family: 'MatrixBoldFractions';
-  font-size: 45pt;
+  top: 540pt;
+  font-family: 'matrixboldfractions';
+  font-size: 55pt;
   text-align: center;
-  width: 80px;
+  width: 100pt;
   letter-spacing: -6px;
+}
+@font-face {
+  font-family: 'matrixboldfractions';
+  src: url('../../../public/assets/fonts/matrixboldfractions.otf') format('opentype');
 }
 /*****************************************************************************************************************/
 /* Image Container */
@@ -210,16 +230,16 @@ h2 {
 }
 
 .imageContainer {
-  top: 226px;
-  left: -219px;
-  width: 613px;
+  top: 219px;
+  left: 406px;
+  width: 614px;
   height: 613px;
 }
 
 .pendulumContainer {
-  top: 219px;
-  left: -219px;
-  width: 701px;
+  top: 212px;
+  left: -1px;
+  width: 702px;
   height: 664px;
 }
 
@@ -244,3 +264,4 @@ h2 {
   .save-button:hover {
     background-color: #808080;
   }
+
