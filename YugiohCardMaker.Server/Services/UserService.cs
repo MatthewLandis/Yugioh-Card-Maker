@@ -8,7 +8,7 @@ namespace YugiohCardMaker.Server.Services
     {
         private readonly ISql _sql = sql;
 
-        public async Task<bool> RegisterUser(User request)
+        public async Task<int> RegisterUser(User request)
         {
             try
             {
@@ -16,18 +16,18 @@ namespace YugiohCardMaker.Server.Services
                 User? existingUser = await con.QuerySingleOrDefaultAsync<User>("Select * from Users where Email = @Email", new { request.Email });
                 if (existingUser != null)
                 {
-                    return false;
+                    return 0;
                 }
 
-                int result = await con.ExecuteAsync("Insert into Users (Username, Email, Password) VALUES (@Username, @Email, @Password)", request);
-                return result != 0;
+                int result = await con.QuerySingleOrDefaultAsync<int>("Insert into Users (Username, Email, Password) VALUES (@Username, @Email, @Password); select SCOPE_IDENTITY()", request);
+                return result;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
 
-            return false;
+            return 0;
         }
     }
 }

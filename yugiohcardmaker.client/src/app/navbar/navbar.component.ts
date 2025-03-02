@@ -16,11 +16,11 @@ export class NavbarComponent implements OnInit {
   }
 
   checkLoginStatus() {
-    this.isLoggedIn = !!localStorage.getItem('token'); // Check if token exists
+    this.isLoggedIn = !!localStorage.getItem('ID'); // Check if token exists
   }
 
   logout() {
-    localStorage.removeItem('token'); // Remove token on logout
+    localStorage.removeItem('ID'); // Remove token on logout
     this.isLoggedIn = false;
     this.router.navigate(['/login']); // Redirect to login page
   }

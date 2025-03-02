@@ -20,13 +20,14 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.username && this.email && this.password) {
-      this.http.post<any>(this.apiUrl, {
+      this.http.post<number>(this.apiUrl, {
         username: this.username,
         email: this.email,
         password: this.password
       }).subscribe({
-        next: () => {
+        next: (number) => {
           console.log("Registration successful");
+          localStorage.setItem('ID', number.toString());
         },
       });
     } else {

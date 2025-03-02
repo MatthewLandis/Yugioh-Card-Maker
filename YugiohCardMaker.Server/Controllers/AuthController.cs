@@ -18,9 +18,9 @@ namespace YugiohCardMaker.Server.Controllers
                 return BadRequest(new { message = "All fields are required." });
             }
 
-            bool success = await _userService.RegisterUser(request);
+            int success = await _userService.RegisterUser(request);
 
-            return success ? Ok(new { message = "Registration successful!" }) : BadRequest(new { message = "User already exists." });
+            return success > 0 ? Ok(success) : BadRequest("User already exists.");
         }
     }
 }
