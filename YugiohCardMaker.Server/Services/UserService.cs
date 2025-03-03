@@ -29,5 +29,12 @@ namespace YugiohCardMaker.Server.Services
 
             return 0;
         }
+
+        public async Task<int> LoginUser(User request)
+        {
+            using Microsoft.Data.SqlClient.SqlConnection con = _sql.YCM;
+            int? userID = await con.QuerySingleOrDefaultAsync<int>("SELECT ID FROM Users WHERE Email = @Email AND Password = @Password", request);
+            return userID != null ? (int)userID : 0;
+        }
     }
 }

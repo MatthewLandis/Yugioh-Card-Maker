@@ -8,30 +8,31 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['../login/login.component.css']
 })
 export class RegisterComponent {
-  username = '';
-  email = '';
-  password = '';
-  errorMessage = '';
-  successMessage = '';
+  registerInfo = { username: '', email: '', password: '' };
 
   private apiUrl = 'http://localhost:5000/api/auth/register';
 
   constructor(private http: HttpClient, private router: Router) { }
 
   onSubmit() {
-    if (this.username && this.email && this.password) {
-      this.http.post<number>(this.apiUrl, {
-        username: this.username,
-        email: this.email,
-        password: this.password
+    if (this.registerInfo) {
+      this.http.post<{ id: number, username: string }>(this.apiUrl, {
+        username: this.registerInfo.username,
+        email: this.registerInfo.email,
+        password: this.registerInfo.password
       }).subscribe({
-        next: (number) => {
-          console.log("Registration successful");
-          localStorage.setItem('ID', number.toString());
+        next: (response) => {
+          localStorage.setItem('ID', response.id.toString());
+          localStorage.setItem('USERNAME', response.username);
+          console.log(localStorage.getItem('USERNAME'));
+
+          this.router.navigate(['/']).then(() => {
+            window.location.reload();
+          });
         },
       });
     } else {
-      this.errorMessage = 'Please fill in all fields.';
+      window.alert('Fill out all fields!');
     }
   }
 

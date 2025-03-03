@@ -8,6 +8,9 @@
     </nav>
     <div class="login-container">
       <button *ngIf="!isLoggedIn" routerLink="/login">Login</button>
-      <button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+      <div *ngIf="isLoggedIn">
+        <p>Profile: {{username}}</p>
+        <button (click)="logout()">Logout</button>
+      </div>
     </div>
   </header>

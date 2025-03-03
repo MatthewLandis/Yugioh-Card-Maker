@@ -15,12 +15,25 @@ namespace YugiohCardMaker.Server.Controllers
         {
             if (request == null || string.IsNullOrEmpty(request.Username) || string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Password))
             {
-                return BadRequest(new { message = "All fields are required." });
+                return BadRequest("All fields are required.");
             }
 
-            int success = await _userService.RegisterUser(request);
+            int userID = await _userService.RegisterUser(request);
 
-            return success > 0 ? Ok(success) : BadRequest("User already exists.");
+            return userID > 0 ? Ok(new { id = userID, username = request.Username }) : BadRequest("User already exists.");
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] User request)
+        {
+            if (request == null || string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Password))
+            {
+                return BadRequest("All fields are required.");
+            }
+
+            int userID = await _userService.LoginUser(request);
+
+            return userID > 0 ? Ok(new { id = userID, username = request.Username }) : BadRequest("User already exists.");
         }
     }
 }

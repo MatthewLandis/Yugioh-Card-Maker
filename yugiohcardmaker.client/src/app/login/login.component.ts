@@ -8,28 +8,30 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  email = '';
-  password = '';
-  errorMessage = '';
-
-  private apiUrl = 'http://localhost:5000/api/auth/login'; // Update based on your backend URL
+  loginInfo = { email: '', password: '' };
+  
+  private apiUrl = 'http://localhost:5000/api/auth/login';
 
   constructor(private http: HttpClient, private router: Router) { }
 
   onSubmit() {
-    if (this.email && this.password) {
-      this.http.post<any>(this.apiUrl, { email: this.email, password: this.password })
-        .subscribe({
+    if (this.loginInfo) {
+      this.http.post<number>(this.apiUrl, {
+        username: '',
+        email: this.loginInfo.email,
+        password: this.loginInfo.password
+        }).subscribe({
           next: (response) => {
-            localStorage.setItem('token', response.token); // Store JWT token (if used)
-            this.router.navigate(['/']);
+            console.log("Login successful");
+            localStorage.setItem('ID', response.toString());
+
+            this.router.navigate(['/']).then(() => {
+              window.location.reload();
+            });
           },
-          error: (error) => {
-            this.errorMessage = error.error.message || 'Login failed!';
-          }
         });
     } else {
-      this.errorMessage = 'Please fill in all fields.';
+      window.alert('Fill out all fields!');
     }
   }
 
@@ -37,4 +39,3 @@ export class LoginComponent {
     this.router.navigate(['/register']);
   }
 }
-

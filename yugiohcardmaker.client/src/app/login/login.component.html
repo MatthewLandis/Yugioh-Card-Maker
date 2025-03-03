@@ -2,12 +2,11 @@
     <h1>Login</h1>
     <hr>
     <form (submit)="onSubmit()">
-      <input type="text" [(ngModel)]="email" name="email" placeholder="Email" required/>
-      <input type="text" [(ngModel)]="password" name="password" placeholder="Password" required/>
+      <input type="text" [(ngModel)]="loginInfo.email" name="email" placeholder="Email" required/>
+      <input type="text" [(ngModel)]="loginInfo.password" name="password" placeholder="Password" required/>
       <p>Don't have an account?<br>
         <button (click)="navigateToRegister()" style="width: 25%;">Register Here</button>
       </p>
       <button type="submit">Login</button>
     </form>
-    <p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
 </section>

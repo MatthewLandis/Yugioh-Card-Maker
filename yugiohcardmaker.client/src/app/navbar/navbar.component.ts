@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   isLoggedIn = false;
+  username: string | null = '';
 
   constructor(private router: Router) { }
 
@@ -16,12 +17,19 @@ export class NavbarComponent implements OnInit {
   }
 
   checkLoginStatus() {
-    this.isLoggedIn = !!localStorage.getItem('ID'); // Check if token exists
+    this.isLoggedIn = !!localStorage.getItem('ID');
+    this.username = localStorage.getItem('USERNAME');
+    console.log(localStorage.getItem('USERNAME'));
+
+    console.log("🔹 Username from localStorage:", this.username);
   }
 
   logout() {
-    localStorage.removeItem('ID'); // Remove token on logout
+    localStorage.removeItem('ID');
+    localStorage.removeItem('USERNAME');
+
     this.isLoggedIn = false;
-    this.router.navigate(['/login']); // Redirect to login page
+    this.username = null;
+
   }
 }
