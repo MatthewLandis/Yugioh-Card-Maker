@@ -31,9 +31,9 @@ namespace YugiohCardMaker.Server.Controllers
                 return BadRequest("All fields are required.");
             }
 
-            int userID = await _userService.LoginUser(request);
+            User? user = await _userService.LoginUser(request);
 
-            return userID > 0 ? Ok(new { id = userID, username = request.Username }) : BadRequest("User already exists.");
+            return user != null ? Ok(new { id = user.ID, username = user.Username }) : BadRequest("User already exists.");
         }
     }
 }

@@ -4,12 +4,13 @@
       <ul>
         <li><a href="/About">About</a></li>
         <li><a href="/CardMaker">Card Maker</a></li>
+        <li><a href="/Decks">Decks</a></li>
       </ul>
     </nav>
     <div class="login-container">
       <button *ngIf="!isLoggedIn" routerLink="/login">Login</button>
       <div *ngIf="isLoggedIn">
-        <p>Profile: {{username}}</p>
+        <p>Profile: {{username}} </p>
         <button (click)="logout()">Logout</button>
       </div>
     </div>

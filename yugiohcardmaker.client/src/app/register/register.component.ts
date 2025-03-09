@@ -15,16 +15,13 @@ export class RegisterComponent {
   constructor(private http: HttpClient, private router: Router) { }
 
   onSubmit() {
-    if (this.registerInfo) {
-      this.http.post<{ id: number, username: string }>(this.apiUrl, {
-        username: this.registerInfo.username,
-        email: this.registerInfo.email,
-        password: this.registerInfo.password
-      }).subscribe({
+    if (this.registerInfo.username != '' || this.registerInfo.email != '' || this.registerInfo.password != '') {
+      this.http.post<{ id: number, username: string }>(this.apiUrl, this.registerInfo
+                      // i want this, hehehe, (above)               this be what ima send, yar
+      ).subscribe({ //server respobds wiith next
         next: (response) => {
           localStorage.setItem('ID', response.id.toString());
-          localStorage.setItem('USERNAME', response.username);
-          console.log(localStorage.getItem('USERNAME'));
+          localStorage.setItem('username', response.username);
 
           this.router.navigate(['/']).then(() => {
             window.location.reload();
